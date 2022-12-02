@@ -1,13 +1,222 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+:root{
+    --primary-bg-light: #e0e0e0;
+    --primary-color-light: #253650;
+    --primary-shadow-glow-light: #fff;
+    --primary-shadow-dark-light: #b4b3b3;
+    
+    --secondary-bg-light: #cfcfcf;
+    --secondary-color-light: #0b111a;
+    --secondary-shadow-glow-light: #fff;
+    --secondary-shadow-dark-light: #929292;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+.centered{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.msg-top{
+    width: 98%;
+    margin: 10px 0;
+    padding: 5px;
+    text-align: center;
+}
+
+.unselectable{
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+@media (max-width: 540px) {
+ .centered{
+     position: unset;
+     left: unset;
+     transform: unset;
+ }   
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--primary-bg-light); 
+    box-shadow: inset 5px 5px 10px var(--primary-shadow-dark-light),
+             inset -4px -4px 10px var(--primary-shadow-glow-light);
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color-light);
+    border-radius: 10px; 
+  }
+
+body{
+    background: var(--primary-bg-light);
+    color: var(--primary-color-light);
+}
+button,
+input,
+textarea{
+    padding: 10px;
+    border: none;
+    background: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    color: var(--primary-color-light);
+}
+input::placeholder,
+textarea::placeholder{
+    color: var(--primary-color-light);
+    opacity: 0.7;
+}
+.neumorph-box,
+.neumorph-btn,
+.neumorph-btn-inner:hover{
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px var(--primary-shadow-dark-light),
+             -4px -4px 10px var(--primary-shadow-glow-light);
+}
+.neumorph-box-inner,
+.neumorph-btn-inner,
+.neumorph-btn:hover{
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 10px var(--primary-shadow-dark-light),
+             inset -4px -4px 10px var(--primary-shadow-glow-light);
+}
+.neumorph-box-cradius,
+.neumorph-btn-cradius,
+.neumorph-btn-inner-cradius:hover{
+    box-shadow: 5px 5px 10px var(--primary-shadow-dark-light),
+             -4px -4px 10px var(--primary-shadow-glow-light);
+}
+.neumorph-box-inner-cradius,
+.neumorph-btn-inner-cradius,
+.neumorph-btn-cradius:hover{
+    box-shadow: inset 5px 5px 10px var(--primary-shadow-dark-light),
+             inset -4px -4px 10px var(--primary-shadow-glow-light);
+}
+
+.neumorph-box-s,
+.neumorph-btn-s,
+.neumorph-btn-s-inner:hover{
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px var(--secondary-shadow-dark-light),
+             -4px -4px 10px var(--secondary-shadow-glow-light);
+}
+.neumorph-box-s-inner,
+.neumorph-btn-s-inner,
+.neumorph-btn-s:hover{
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 10px var(--secondary-shadow-dark-light),
+             inset -4px -4px 10px var(--secondary-shadow-glow-light);
+}
+.neumorph-box-s-cradius,
+.neumorph-btn-s-cradius,
+.neumorph-btn-s-inner-cradius:hover{
+    box-shadow: 5px 5px 10px var(--secondary-shadow-dark-light),
+             -4px -4px 10px var(--secondary-shadow-glow-light);
+}
+.neumorph-box-s-inner-cradius,
+.neumorph-btn-s-inner-cradius,
+.neumorph-btn-s-cradius:hover{
+    box-shadow: inset 5px 5px 10px var(--secondary-shadow-dark-light),
+             inset -4px -4px 10px var(--secondary-shadow-glow-light);
+}
+.neumorphic-h1{
+    color: transparent;
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--secondary-color-light);
+    font-size: 4em;
+  }
+.neumorphic-title-h1{
+    font-size: 3em;
+}
+.dark-btn{
+    color: var(--primary-bg-light);
+    background: var(--primary-color-light);
+}
+.dark-btn:hover{
+    background: var(--primary-bg-light);
+    color: var(--primary-color-light);
+}
+.neumorph-price-card{
+ padding: 20px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+}
+.neumorph-price-card .price{
+    font-size: 5em;
+}
+.neumorph-price-card h5{
+    margin-bottom: 20px;
+}
+.neumorph-price-card .price sup{
+    font-size: 0.3em;
+}
+.neumorph-price-card > p{
+    font-size: 0.8em;
+    margin: 5px 0;
+}
+.neumorph-price-card .neumorph-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.mg-10px{
+    margin: 10px;
+}
+.pad-10px{
+    padding: 10px;
+}
+.neumorph-square-box{
+    min-width: 280px;
+    min-height: 280px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.neumorph-noSquare-box{
+    min-width: 300px;
+    min-height: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@media (max-width: 540px) {
+    .neumorphic-title-h1{
+        font-size: 2.7em;
+    }
 }
